@@ -5,6 +5,8 @@
  */
 package es.uma.a6.beans;
 
+
+
 import WebService.Campaña;
 import WebService.Modulo;
 import javax.inject.Named;
@@ -13,6 +15,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
+
 
 /**
  *

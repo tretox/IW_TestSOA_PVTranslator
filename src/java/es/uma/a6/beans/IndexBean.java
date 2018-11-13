@@ -196,7 +196,6 @@ public class IndexBean {
         return "modulo.xhtml";
         
     }
-    
 
     private java.util.List<WebService.Campaña> findAllCampanya() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
@@ -275,19 +274,18 @@ public class IndexBean {
         return port.findCampanya(id);
     }
 
-
-    private Modulo findModuloByNombre(java.lang.String nombre) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
-        return port.findModuloByNombre(nombre);
-    }
-
     private java.util.List<WebService.Campaña> findCampanyaByModulo(WebService.Modulo m) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
         return port.findCampanyaByModulo(m);
+    }
+
+    private Modulo findModulo(java.lang.Object id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
+        return port.findModulo(id);
     }
 
     private Modulo findModuloByCampaña(WebService.Campaña c) {
@@ -296,6 +294,15 @@ public class IndexBean {
         WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
         return port.findModuloByCampaña(c);
     }
+
+    private Modulo findModuloByNombre(java.lang.String nombre) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
+        return port.findModuloByNombre(nombre);
+    }
+    
+
     
     
     
