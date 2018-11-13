@@ -24,11 +24,15 @@
             
             <h:column>
                 <f:facet name="header"> Modulo </f:facet>
-           <!--     <h:outputText value=""/>-->
+                <h:outputText value="#{camp.modulo.nombre}"/>
             </h:column>
             
-            
         </h:dataTable>
+        
+        <h:form>
+            <h:commandButton action="#{campanyaBean.doAtras()}" value="Atras"/>
+        </h:form>
+        
     </h:body>
 </html>
 
