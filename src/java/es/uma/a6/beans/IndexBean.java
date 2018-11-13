@@ -36,9 +36,9 @@ public class IndexBean {
     
     private List<Campaña> campanyas;
     
-    private Modulo moduloSeleccionado;
+    private String moduloSeleccionado;
     
-    private Campaña campanyaSeleccionada;
+    private String campanyaSeleccionada;
     
     private String nombreModulo;
     
@@ -54,18 +54,18 @@ public class IndexBean {
         nombreCampanya="";
         modulos=findAllModulo();
         campanyas=findAllCampanya();
-        moduloSeleccionado=null;
-        campanyaSeleccionada=null;
+        moduloSeleccionado="";
+        campanyaSeleccionada="";
         nombreModulo="";
     }
     
     
 
-    public Campaña getCampanyaSeleccionada() {
+    public String getCampanyaSeleccionada() {
         return campanyaSeleccionada;
     }
 
-    public void setCampanyaSeleccionada(Campaña campanyaSeleccionada) {
+    public void setCampanyaSeleccionada(String campanyaSeleccionada) {
         this.campanyaSeleccionada = campanyaSeleccionada;
     }
     
@@ -103,11 +103,11 @@ public class IndexBean {
         this.modulos = modulos;
     }
 
-    public Modulo getModuloSeleccionado() {
+    public String getModuloSeleccionado() {
         return moduloSeleccionado;
     }
 
-    public void setModuloSeleccionado(Modulo moduloSeleccionado) {
+    public void setModuloSeleccionado(String moduloSeleccionado) {
         this.moduloSeleccionado = moduloSeleccionado;
     }
 
@@ -176,7 +176,8 @@ public class IndexBean {
     }
     
     public String doFindCampanyaByModulo(){
-         sessionBean.setListaCampanyas(findCampanyaByModulo(moduloSeleccionado));
+        Modulo m= findModuloByNombre(moduloSeleccionado);
+         sessionBean.setListaCampanyas(findCampanyaByModulo(m));
          return "campanya.xhtml";
         
     }
@@ -190,8 +191,9 @@ public class IndexBean {
     }
     
     public String doFindModuloByCampanya(){
+        Campaña c= findCampanya(campanyaSeleccionada);
         List<Modulo> lista= new ArrayList();
-        lista.add(findModuloByCampaña(campanyaSeleccionada));
+        lista.add(findModuloByCampaña(c));
         sessionBean.setListaModulos(lista);
         return "modulo.xhtml";
         
