@@ -15,61 +15,61 @@
         
         <h:form>
             <h6>Muestra todas los módulos (findAll)</h6>
-            <h:commandButton action="#{IndexBean.doFindAll()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModulo()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas los módulos ordenados por alpha</h6>
-            <h:commandButton action="#{IndexBean.doFindAllModuloOrderedByAlpha()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModuloOrderedByAlpha()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas los módulos ordenados por beta</h6>
-            <h:commandButton action="#{IndexBean.doFindAllModuloOrderedByBeta()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModuloOrderedByBeta()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas los módulos ordenados por gamma</h6>
-            <h:commandButton action="#{IndexBean.doFindAllModuloOrderedByGamma()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModuloOrderedByGamma()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas los módulos ordenados por kappa</h6>
-            <h:commandButton action="#{IndexBean.doFindAllModuloOrderedByKappa()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModuloOrderedByKappa()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas los módulos ordenados por nombre</h6>
-            <h:commandButton action="#{IndexBean.doFindAllModuloOrderedByName()}"/>
+            <h:commandButton action="#{indexBean.doFindAllModuloOrderedByName()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra el modulo con el nombre indicado</h6>
-            <p> Nombre: <h:inputText value="#{IndexBean.nombreModulo}"/> </p>
-            <h:commandButton action="#{IndexBean.doFindModuloByNombre()}"/>
+            <p> Nombre: <h:inputText value="#{indexBean.nombreModulo}"/> </p>
+            <h:commandButton action="#{indexBean.doFindModuloByNombre()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra el modulo del la campaña seleccionada</h6>
-            <h:selectOneRadio value="#{IndexBean.campanyaSeleccionado}">
-                <f:selectItems value="#{IndexBean.campanyas}" var="c"
+            <h:selectOneRadio value="#{indexBean.campanyaSeleccionada}">
+                <f:selectItems value="#{indexBean.campanyas}" var="c"
    			itemLabel="#{c.nombre}" itemValue="#{c}" />
             </h:selectOneRadio>
-            <h:commandButton action="#{IndexBean.doFindModuloByCampanya()}"/>
+            <h:commandButton action="#{indexBean.doFindModuloByCampanya()}" value="Pulsa"/>
         </h:form>
         
         
@@ -79,47 +79,47 @@
         
         <h:form>
             <h6>Muestra todas las campañas (findAll)</h6>
-            <h:commandButton action="#{IndexBean.doFindAllCampanyas()}"/>
+            <h:commandButton action="#{indexBean.doFindAllCampanyas()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas las campañas ordenadas por fechas ascendente</h6>
-            <h:commandButton action="#{IndexBean.doFindAllCampanyaOrderedByDateAsc()}"/>
+            <h:commandButton action="#{indexBean.doFindAllCampanyaOrderedByDateAsc()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas las campañas ordenadas por fechas descendente</h6>
-            <h:commandButton action="#{IndexBean.doFindAllCampanyaOrderedByDateDesc()}"/>
+            <h:commandButton action="#{indexBean.doFindAllCampanyaOrderedByDateDesc()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra todas las campañas ordenadas nombre</h6>
-            <h:commandButton action="#{IndexBean.doFindAllCampanyaOrderedByName()}"/>
+            <h:commandButton action="#{indexBean.doFindAllCampanyaOrderedByName()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra la campaña con el nombre indicado</h6>
-            <p> Nombre: <h:inputText value="#{IndexBean.nombreCampanya}"/> </p>
-            <h:commandButton action="#{IndexBean.doFindCampanya()}"/>
+            <p> Nombre: <h:inputText value="#{indexBean.nombreCampanya}"/> </p>
+            <h:commandButton action="#{indexBean.doFindCampanya()}" value="Pulsa"/>
         </h:form>
         
         <br/>
         
         <h:form>
             <h6>Muestra las campañas del modulo seleccionado</h6>
-            <h:selectOneRadio value="#{IndexBean.moduloSeleccionado}">
-                <f:selectItems value="#{IndexBean.modulos}" var="m"
+            <h:selectOneRadio value="#{indexBean.moduloSeleccionado}">
+                <f:selectItems value="#{indexBean.modulos}" var="m"
    			itemLabel="#{m.nombre}" itemValue="#{m}" />
             </h:selectOneRadio>
-            <h:commandButton action="#{IndexBean.doFindCampanyaByModulo()}"/>
+            <h:commandButton action="#{indexBean.doFindCampanyaByModulo()}" value="Pulsa"/>
         </h:form>
         
     </h:body>
