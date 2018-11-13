@@ -38,6 +38,8 @@ public class IndexBean {
     
     private Modulo moduloSeleccionado;
     
+    private Campaña campanyaSeleccionada;
+    
     private String nombreModulo;
     
 
@@ -53,8 +55,21 @@ public class IndexBean {
         modulos=findAllModulo();
         campanyas=findAllCampanya();
         moduloSeleccionado=null;
+        campanyaSeleccionada=null;
         nombreModulo="";
     }
+    
+    
+
+    public Campaña getCampanyaSeleccionada() {
+        return campanyaSeleccionada;
+    }
+
+    public void setCampanyaSeleccionada(Campaña campanyaSeleccionada) {
+        this.campanyaSeleccionada = campanyaSeleccionada;
+    }
+    
+    
 
     public List<Campaña> getCampanyas() {
         return campanyas;
@@ -174,6 +189,13 @@ public class IndexBean {
         
     }
     
+    public String doFindModuloByCampanya(){
+        List<Modulo> lista= new ArrayList();
+        lista.add(findModuloByCampaña(campanyaSeleccionada));
+        sessionBean.setListaModulos(lista);
+        return "modulo.xhtml";
+        
+    }
     
 
     private java.util.List<WebService.Campaña> findAllCampanya() {
@@ -266,6 +288,13 @@ public class IndexBean {
         // If the calling of port operations may lead to race condition some synchronization is required.
         WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
         return port.findCampanyaByModulo(m);
+    }
+
+    private Modulo findModuloByCampaña(WebService.Campaña c) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        WebService.WSPVTranslator port = service.getWSPVTranslatorPort();
+        return port.findModuloByCampaña(c);
     }
     
     

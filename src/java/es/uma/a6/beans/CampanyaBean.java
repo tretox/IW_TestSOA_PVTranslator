@@ -22,4 +22,8 @@ public class CampanyaBean {
     public CampanyaBean() {
     }
     
+    public String doAtras(){
+        return "index.xhtml";
+    }
+    
 }
