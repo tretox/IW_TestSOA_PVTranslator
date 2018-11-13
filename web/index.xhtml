@@ -65,10 +65,10 @@
         
         <h:form>
             <h6>Muestra el modulo del la campaña seleccionada</h6>
-            <h:selectOneRadio value="#{indexBean.campanyaSeleccionada}">
+            <h:selectOneMenu value="#{indexBean.campanyaSeleccionada}">
                 <f:selectItems value="#{indexBean.campanyas}" var="c"
                                itemLabel="#{c.nombre}" itemValue="#{c.nombre}" />
-            </h:selectOneRadio>
+            </h:selectOneMenu><br/>
             <h:commandButton action="#{indexBean.doFindModuloByCampanya()}" value="Pulsa"/>
         </h:form>
         
@@ -115,10 +115,10 @@
         
         <h:form>
             <h6>Muestra las campañas del modulo seleccionado</h6>
-            <h:selectOneRadio value="#{indexBean.moduloSeleccionado}">
+            <h:selectOneMenu value="#{indexBean.moduloSeleccionado}">
                 <f:selectItems value="#{indexBean.modulos}" var="m"
                                itemLabel="#{m.nombre}" itemValue="#{m.nombre}" />
-            </h:selectOneRadio>
+            </h:selectOneMenu><br/>
             <h:commandButton action="#{indexBean.doFindCampanyaByModulo()}" value="Pulsa"/>
         </h:form>
         
